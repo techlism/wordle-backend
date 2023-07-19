@@ -1,10 +1,12 @@
 import express from 'express';
 import { readFileSync } from 'fs';
+import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
 
+app.use(cors());
 // Function to read the words from the text file
 function readRandom() {
   const fileContent = readFileSync('words.txt', 'utf8');
